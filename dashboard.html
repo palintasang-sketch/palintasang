@@ -1,0 +1,15 @@
+<script>
+if (localStorage.getItem('pd_login') !== 'true') {
+    location.href = 'index.html';
+}
+</script>
+
+<h1>Dashboard Pegawai</h1>
+<button onclick="logout()">Logout</button>
+
+<script>
+function logout() {
+    localStorage.clear();
+    location.href = 'index.html';
+}
+</script>
