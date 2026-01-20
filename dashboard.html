@@ -1,6 +1,6 @@
 <script>
-if (localStorage.getItem('pd_login') !== 'true') {
-    location.href = 'index.html';
+if (sessionStorage.getItem('pd_login') !== 'true') {
+  location.href = 'index.html';
 }
 </script>
 
@@ -9,7 +9,7 @@ if (localStorage.getItem('pd_login') !== 'true') {
 
 <script>
 function logout() {
-    localStorage.clear();
-    location.href = 'index.html';
+  sessionStorage.clear();
+  location.href = 'index.html';
 }
 </script>
