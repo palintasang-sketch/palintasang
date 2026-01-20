@@ -1,9 +1,9 @@
 <script>
 if (
-    localStorage.getItem('pd_login') !== 'true' ||
-    localStorage.getItem('pd_role') !== 'Admin'
+  sessionStorage.getItem('pd_login') !== 'true' ||
+  sessionStorage.getItem('pd_role') !== 'Admin'
 ) {
-    window.location.href = 'index.html';
+  location.href = 'index.html';
 }
 </script>
 
@@ -12,7 +12,7 @@ if (
 
 <script>
 function logout() {
-    localStorage.clear();
-    location.href = 'index.html';
+  sessionStorage.clear();
+  location.href = 'index.html';
 }
 </script>
