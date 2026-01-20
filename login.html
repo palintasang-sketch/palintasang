@@ -1,83 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Login – Pa'lintasang Data</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Login – Pa'lintasang Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg,#1e3a8a,#1e40af); }
-    </style>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg,#1e3a8a,#1e40af); }
+  </style>
 </head>
 
-<body class="bg-slate-100 flex items-center justify-center min-h-screen p-4">
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
 
 <div class="max-w-4xl w-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
 
-    <!-- LEFT -->
-    <div class="md:w-1/2 hero-gradient p-12 text-white flex flex-col justify-between">
-        <div>
-            <h1 class="font-bold text-xl uppercase">
-                PA'LINTASANG <span class="text-amber-400">DATA</span>
-            </h1>
-            <h2 class="text-3xl font-extrabold italic mt-6">
-                Selamat<br><span class="text-amber-400">Datang Kembali</span>
-            </h2>
-            <p class="text-sm mt-4 text-blue-100">
-                Sistem data transportasi dan lalu lintas
-            </p>
+  <!-- LEFT -->
+  <div class="md:w-1/2 hero-gradient p-12 text-white flex flex-col justify-between">
+    <div>
+      <h1 class="font-bold text-xl uppercase">
+        PA'LINTASANG <span class="text-amber-400">DATA</span>
+      </h1>
+      <h2 class="text-3xl font-extrabold italic mt-6">
+        Selamat<br><span class="text-amber-400">Datang Kembali</span>
+      </h2>
+      <p class="text-sm mt-4 text-blue-100">
+        Sistem data transportasi & lalu lintas
+      </p>
+    </div>
+    <p class="text-xs opacity-60">© 2026 Dinas Perhubungan</p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="md:w-1/2 p-10 md:p-16">
+    <h3 class="text-2xl font-bold text-blue-900 mb-2">Login Portal</h3>
+    <p class="text-xs text-slate-400 mb-8">Gunakan NIP dan password resmi</p>
+
+    <form id="loginForm" class="space-y-6">
+
+      <div>
+        <label class="text-[10px] font-bold uppercase text-slate-400">NIP</label>
+        <div class="relative">
+          <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-300"></i>
+          <input id="nip" required
+            class="w-full pl-12 py-3 rounded-2xl bg-slate-50 border outline-none focus:border-blue-500"
+            placeholder="Masukkan NIP">
         </div>
-        <p class="text-xs opacity-60">© 2026 Dinas Perhubungan</p>
-    </div>
+      </div>
 
-    <!-- RIGHT -->
-    <div class="md:w-1/2 p-10 md:p-16">
+      <div>
+        <label class="text-[10px] font-bold uppercase text-slate-400">Password</label>
+        <div class="relative">
+          <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-300"></i>
+          <input id="password" type="password" required
+            class="w-full pl-12 py-3 rounded-2xl bg-slate-50 border outline-none focus:border-blue-500"
+            placeholder="••••••••">
+        </div>
+      </div>
 
-        <h3 class="text-2xl font-bold text-blue-900 mb-2">Login Portal</h3>
-        <p class="text-xs text-slate-400 mb-8">
-            Gunakan NIP dan password resmi Anda
-        </p>
+      <button type="submit"
+        class="w-full bg-blue-900 text-white py-4 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-blue-800 transition">
+        Masuk Sekarang <i class="fas fa-arrow-right ml-2"></i>
+      </button>
+    </form>
 
-        <form id="loginForm" class="space-y-6">
+    <p id="errorMsg" class="hidden mt-4 text-xs text-red-600 text-center"></p>
 
-            <div>
-                <label class="text-[10px] font-bold uppercase text-slate-400">NIP</label>
-                <div class="relative">
-                    <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-300"></i>
-                    <input id="nip" type="text" required
-                        class="w-full pl-12 py-3 rounded-2xl bg-slate-50 border outline-none focus:border-blue-500"
-                        placeholder="Masukkan NIP">
-                </div>
-            </div>
-
-            <div>
-                <label class="text-[10px] font-bold uppercase text-slate-400">Password</label>
-                <div class="relative">
-                    <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-300"></i>
-                    <input id="password" type="password" required
-                        class="w-full pl-12 py-3 rounded-2xl bg-slate-50 border outline-none focus:border-blue-500"
-                        placeholder="••••••••">
-                </div>
-            </div>
-
-            <button type="submit"
-                class="w-full bg-blue-900 text-white py-4 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-blue-800 transition">
-                Masuk Sekarang <i class="fas fa-arrow-right ml-2"></i>
-            </button>
-
-        </form>
-
-        <p id="errorMsg" class="text-xs text-red-600 mt-4 hidden text-center"></p>
-
-        <p class="text-[10px] text-center mt-8 text-slate-400">
-            Belum punya akses? <b>Hubungi Admin IT</b>
-        </p>
-    </div>
+    <p class="text-[10px] text-center mt-8 text-slate-400">
+      Belum punya akses? <b>Hubungi Admin IT</b>
+    </p>
+  </div>
 </div>
 
 <!-- ================= SCRIPT ================= -->
@@ -88,44 +84,46 @@ const form = document.getElementById('loginForm');
 const errorMsg = document.getElementById('errorMsg');
 
 form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    errorMsg.classList.add('hidden');
+  e.preventDefault();
+  errorMsg.classList.add('hidden');
 
-    const nip = document.getElementById('nip').value.trim();
-    const password = document.getElementById('password').value.trim();
+  const nip = document.getElementById('nip').value.trim();
+  const password = document.getElementById('password').value.trim();
 
-    try {
-        const res = await fetch(WEB_APP_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nip, password })
-        });
+  try {
+    const response = await fetch(WEB_APP_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nip, password })
+    });
 
-        const data = await res.json();
+    const data = await response.json();
 
-        if (!data.success) {
-            errorMsg.textContent = 'Login gagal. NIP atau password salah.';
-            errorMsg.classList.remove('hidden');
-            return;
-        }
-
-        // Session (lebih aman daripada localStorage)
-        sessionStorage.setItem('pd_login', 'true');
-        sessionStorage.setItem('pd_nip', data.nip);
-        sessionStorage.setItem('pd_nama', data.nama);
-        sessionStorage.setItem('pd_role', data.role);
-
-        // Redirect berdasarkan role
-        if (data.role === 'Admin') {
-            window.location.href = 'admin.html';
-        } else {
-            window.location.href = 'dashboard.html';
-        }
-
-    } catch (err) {
-        errorMsg.textContent = 'Server tidak merespons. Coba lagi.';
-        errorMsg.classList.remove('hidden');
+    if (!data.success) {
+      errorMsg.textContent = data.message || 'Login gagal';
+      errorMsg.classList.remove('hidden');
+      return;
     }
+
+    // Simpan session
+    sessionStorage.setItem('pd_login', 'true');
+    sessionStorage.setItem('pd_nip', data.nip);
+    sessionStorage.setItem('pd_nama', data.nama);
+    sessionStorage.setItem('pd_role', data.role);
+
+    // Redirect by role
+    if (data.role === 'Admin') {
+      window.location.href = 'admin.html';
+    } else {
+      window.location.href = 'dashboard.html';
+    }
+
+  } catch (err) {
+    errorMsg.textContent = 'Server tidak merespons';
+    errorMsg.classList.remove('hidden');
+  }
 });
 </script>
 
